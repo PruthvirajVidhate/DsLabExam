@@ -1,0 +1,81 @@
+Q.1 Binary search operation
+
+package com.labexam;
+
+public class BinarySearch {  
+	
+	public int binarySearchMethod(int arr[],int size,int element)   //------->method for binary search
+	{
+		int left=0;
+		int right=size-1;
+		int mid;
+		
+		
+		    while(left<=right)
+		       {
+			  mid=(right+left)/2;
+			
+		   if(element==arr[mid])
+			{
+			return mid;
+			}
+			
+			else if(element<arr[mid]) {
+				right=mid-1;
+				}
+			
+			     else  {
+				left=mid+1;
+			}
+		}
+		return -1;
+	}
+
+}
+
+
+
+
+package com.labexam;
+
+import java.util.Scanner;
+
+public class BinarySearchApp {  //------------->main method class
+
+
+	public static void main(String[] args) {  
+		Scanner ip=new Scanner(System.in);
+		BinarySearch b1=new BinarySearch();
+		
+		
+		System.out.print("Enter The Element For Search :");
+		int num=ip.nextInt();
+		int [] arr= {4,8,12,16,20,24,28,32};
+		int length=arr.length;
+		
+		int ele=b1.binarySearchMethod(arr,arr.length,num);
+		
+	if(ele== -1)
+		{
+			System.out.println("Entered Element Not Found In Array");
+		}
+		else
+		{
+			System.out.println("Your Element is "+num+" Found At Index :"+ele);
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
